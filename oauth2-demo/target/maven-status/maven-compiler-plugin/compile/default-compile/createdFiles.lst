@@ -1,0 +1,6 @@
+com\shuang\cloud\security\oauth2\config\OAuth2ServerConfig$AuthorizationServerConfiguration.class
+com\shuang\cloud\security\oauth2\config\OAuth2ServerConfig.class
+com\shuang\cloud\security\oauth2\web\TestEndpoints.class
+com\shuang\cloud\security\oauth2\config\SecurityConfiguration.class
+com\shuang\cloud\security\oauth2\config\OAuth2ServerConfig$ResourceServerConfiguration.class
+com\shuang\cloud\security\oauth2\ClientCredentialsApp.class

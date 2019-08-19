@@ -1,0 +1,361 @@
+{
+	"info": {
+		"_postman_id": "99004901-edba-41ab-ae8d-848c6e7620c0",
+		"name": "oauth2-demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "password模式获取token",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8088/oauth/token?username=user_1&password=123456&grant_type=password&scope=test&client_id=client_2&client_secret=123456",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8088",
+					"path": [
+						"oauth",
+						"token"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "user_1"
+						},
+						{
+							"key": "password",
+							"value": "123456"
+						},
+						{
+							"key": "grant_type",
+							"value": "password"
+						},
+						{
+							"key": "scope",
+							"value": "test"
+						},
+						{
+							"key": "client_id",
+							"value": "client_2"
+						},
+						{
+							"key": "client_secret",
+							"value": "123456"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "client模式获取token",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8088/oauth/token?grant_type=client_credentials&scope=select&client_id=client_1&client_secret=123456",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8088",
+					"path": [
+						"oauth",
+						"token"
+					],
+					"query": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials"
+						},
+						{
+							"key": "scope",
+							"value": "select"
+						},
+						{
+							"key": "client_id",
+							"value": "client_1"
+						},
+						{
+							"key": "client_secret",
+							"value": "123456"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "访问受保护的order资源",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8088/order/1?access_token=dabcfe32-6b66-43e4-9740-1cb7c6767f66",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8088",
+					"path": [
+						"order",
+						"1"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "dabcfe32-6b66-43e4-9740-1cb7c6767f66"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "访问未保护的product资源",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8088/product/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8088",
+					"path": [
+						"product",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "查看RedisTokenStore_deserialize/access",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8088/deserialize/access?key=access:41f19f71-ab8c-4335-852e-c01dfb3f1e32",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8088",
+					"path": [
+						"deserialize",
+						"access"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "access:41f19f71-ab8c-4335-852e-c01dfb3f1e32"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "查看RedisTokenStore_deserialize/auth_to_access",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8088/deserialize/auth_to_access?key=f107fb8fa711a79deba0a54daf30e18b",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8088",
+					"path": [
+						"deserialize",
+						"auth_to_access"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "f107fb8fa711a79deba0a54daf30e18b"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "查看RedisTokenStore_deserialize/client_id_to_access",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8088/deserialize/client_id_to_access?key=client_1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8088",
+					"path": [
+						"deserialize",
+						"client_id_to_access"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "client_1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_oauth/tokenBYClient",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/oauth/token?scope=get_user_info&client_secret=123456&client_id=client_1&grant_type=client_credentials",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"oauth",
+						"token"
+					],
+					"query": [
+						{
+							"key": "scope",
+							"value": "get_user_info"
+						},
+						{
+							"key": "client_secret",
+							"value": "123456"
+						},
+						{
+							"key": "client_id",
+							"value": "client_1"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_oauth/tokenBYPassword",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/oauth/token?scope=get_fanslist&client_secret=123456&client_id=client_2&grant_type=password",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"oauth",
+						"token"
+					],
+					"query": [
+						{
+							"key": "scope",
+							"value": "get_fanslist"
+						},
+						{
+							"key": "client_secret",
+							"value": "123456"
+						},
+						{
+							"key": "client_id",
+							"value": "client_2"
+						},
+						{
+							"key": "grant_type",
+							"value": "password"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_qq/infoBypassword",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/oauth/token?scope=get_fanslist&client_secret=123456&client_id=client_2&grant_type=password",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"oauth",
+						"token"
+					],
+					"query": [
+						{
+							"key": "scope",
+							"value": "get_fanslist"
+						},
+						{
+							"key": "client_secret",
+							"value": "123456"
+						},
+						{
+							"key": "client_id",
+							"value": "client_2"
+						},
+						{
+							"key": "grant_type",
+							"value": "password"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
